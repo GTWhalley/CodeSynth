@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Synth</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>Synth</h1>
+        <p>Do you want to <span id="generatePopup" class="popup-trigger">generate<span class="popup-text">Create a small snippet of code.</span></span> or <span id="parsePopup" class="popup-trigger">parse<span class="popup-text">Explain the code, find and correct errors.</span></span> a code snippet?</p>
+        <!-- Choice Buttons -->
+        <div class="button-container"> 
+            <button id="generateCode" class="option-button">Generate Code</button>
+            <button id="parseCode" class="option-button">Parse Code</button>
+        </div>
+    </div>
+
+    <!-- Generate Code -->
+    <div id="generateCodeContainer" class="code-container" style="display: none;">
+        <!-- Choose Programming Language -->
+        <div class="input-group">
+            <label for="languageSelectGenerate">Programming Language:</label>
+            <select id="languageSelectGenerate" class="select-menu">
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Solidity">Solidity</option>
+            </select>
+        </div>
+        <!-- Desired Outcome -->
+        <div class="input-group">
+            <label for="desiredOutcomeGenerate">Desired Outcome:</label>
+            <input type="text" id="desiredOutcomeGenerate" class="text-input" placeholder="e.g., create a loop, apply styling, etc." />
+        </div>
+        <!-- Detailed Description -->
+        <div class="input-group">
+            <label for="detailedDescriptionGenerate">Detailed Description:</label>
+            <textarea id="detailedDescriptionGenerate" class="text-input" placeholder="Describe your requirements in detail here..." rows="4"></textarea>
+        </div>
+        <button id="submitRequestGenerate" class="submit-button">Submit Request</button>
+    </div>
+
+    <!-- Parse Code -->
+    <div id="parseCodeContainer" class="code-container" style="display: none;">
+        <!-- Choose Programming Language -->
+        <div class="input-group">
+            <label for="languageSelectParse">Programming Language:</label>
+            <select id="languageSelectParse" class="select-menu">
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Solidity">Solidity</option>
+            </select>
+        </div>
+        <!-- Brief Description -->
+        <div class="input-group">
+            <label for="briefDescriptionParse">Brief Description (be specific):</label>
+            <input type="text" id="briefDescriptionParse" class="text-input" placeholder="e.g., sort the list, clean up code, etc." />
+        </div>
+        <!-- Code Snippet -->
+        <div class="input-group">
+            <label for="codeSnippetParse">Code Snippet:</label>
+            <textarea id="codeSnippetParse" class="text-input" placeholder="Write your code snippet here..." rows="4"></textarea>
+        </div>
+        <button id="submitRequestParse" class="submit-button">Submit Request</button>
+    </div>
+    
+    <script src="./main.js" defer></script>
+</body>
+</html>
